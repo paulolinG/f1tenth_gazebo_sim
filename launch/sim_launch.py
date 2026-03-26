@@ -46,6 +46,18 @@ def generate_launch_description() -> LaunchDescription:
         launch_arguments={'world': world_file}.items()
     )
 
+    reset_car_node = Node(
+        package='f1tenth_gazebo',
+        executable='reset_car',
+        output='screen'
+    )
+
+    ackermann_to_drive_node = Node(
+        package='f1tenth_gazebo',
+        executable = 'convert_drive',
+        output='screen',
+    )
+
     # Spawn the f1tenth car using the parameterized coordinates
     spawn_entity = Node(
         package='gazebo_ros', 
@@ -65,6 +77,7 @@ def generate_launch_description() -> LaunchDescription:
         declare_x_pose_cmd,
         declare_y_pose_cmd,
         declare_z_pose_cmd,
+        ackermann_to_drive_node,
         node_robot_state_publisher,
         gazebo,
         spawn_entity

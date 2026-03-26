@@ -25,6 +25,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'reset_car = f1tenth_gazebo.reset_car:main',
+            'convert_drive = f1tenth_gazebo.ackermann_drive_to_twist:main'    
         ],
     },
 )
