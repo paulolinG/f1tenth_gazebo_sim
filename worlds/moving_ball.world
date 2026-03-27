@@ -1,0 +1,113 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="simple_track">
+
+    <!-- <physics type="ode">
+      <max_step_size>0.004</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>250</real_time_update_rate>
+    </physics> -->
+    <physics type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+
+    <scene>
+      <shadows>false</shadows>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+    </scene>
+
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://ground_plane</uri></include>
+
+    <model name="track_ground">
+      <static>true</static>
+      <pose>0 0 0.001 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>30.0 10.0 0.001</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>30.0 10.0 0.001</size></box></geometry>
+          <material>
+            <ambient>0.55 0.55 0.55 1</ambient>
+            <diffuse>0.65 0.65 0.65 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="guide_wall_left">
+      <static>true</static>
+      <pose>5.0 1.5 0.125 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>15.0 0.05 0.25</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>15.0 0.05 0.25</size></box></geometry>
+          <material><ambient>0.1 0.1 0.1 1</ambient><diffuse>0.1 0.1 0.1 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="guide_wall_right">
+      <static>true</static>
+      <pose>5.0 -1.5 0.125 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>15.0 0.05 0.25</size></box></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>15.0 0.05 0.25</size></box></geometry>
+          <material><ambient>0.1 0.1 0.1 1</ambient><diffuse>0.1 0.1 0.1 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <actor name="yellow_ball">
+      <pose>5.0 0.0 0.0508 0 0 0</pose>
+
+      <link name="body">
+        <visual name="visual">
+          <geometry>
+            <sphere><radius>0.0508</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>0.90 0.78 0.08 1</ambient>
+            <diffuse>0.90 0.78 0.08 1</diffuse>
+            <specular>0.1 0.1 0.0 1</specular>
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <sphere><radius>0.0508</radius></sphere>
+          </geometry>
+        </collision>
+      </link>
+
+      <script>
+        <loop>true</loop>
+        <delay_start>0.0</delay_start>
+        <auto_start>true</auto_start>
+        <trajectory id="0" type="square">
+          <waypoint>
+            <time>0.0</time>
+            <pose>-2.0 0.0 0.0508 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>20.0</time>
+            <pose>12.0 0.0 0.0508 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>40.0</time>
+            <pose>-2.0 0.0 0.0508 0 0 0</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+
+  </world>
+</sdf>
