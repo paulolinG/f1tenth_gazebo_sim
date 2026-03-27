@@ -1,0 +1,50 @@
+/home/kuy02/.local/lib/python3.8/site-packages/setuptools/dist.py:723: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead
+  warnings.warn(
+running egg_info
+creating build/f1tenth_gazebo/f1tenth_gazebo.egg-info
+writing build/f1tenth_gazebo/f1tenth_gazebo.egg-info/PKG-INFO
+writing dependency_links to build/f1tenth_gazebo/f1tenth_gazebo.egg-info/dependency_links.txt
+writing entry points to build/f1tenth_gazebo/f1tenth_gazebo.egg-info/entry_points.txt
+writing requirements to build/f1tenth_gazebo/f1tenth_gazebo.egg-info/requires.txt
+writing top-level names to build/f1tenth_gazebo/f1tenth_gazebo.egg-info/top_level.txt
+writing manifest file 'build/f1tenth_gazebo/f1tenth_gazebo.egg-info/SOURCES.txt'
+reading manifest file 'build/f1tenth_gazebo/f1tenth_gazebo.egg-info/SOURCES.txt'
+writing manifest file 'build/f1tenth_gazebo/f1tenth_gazebo.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/build
+creating /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/build/lib
+creating /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/build/lib/f1tenth_gazebo
+copying f1tenth_gazebo/reset_car.py -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/build/lib/f1tenth_gazebo
+copying f1tenth_gazebo/__init__.py -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/build/lib/f1tenth_gazebo
+copying f1tenth_gazebo/generate_track.py -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/build/lib/f1tenth_gazebo
+copying f1tenth_gazebo/ackermann_drive_to_twist.py -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/build/lib/f1tenth_gazebo
+running install
+running install_lib
+creating /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/python3.8/site-packages/f1tenth_gazebo
+copying /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/build/lib/f1tenth_gazebo/reset_car.py -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/python3.8/site-packages/f1tenth_gazebo
+copying /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/build/lib/f1tenth_gazebo/__init__.py -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/python3.8/site-packages/f1tenth_gazebo
+copying /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/build/lib/f1tenth_gazebo/generate_track.py -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/python3.8/site-packages/f1tenth_gazebo
+copying /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/build/lib/f1tenth_gazebo/ackermann_drive_to_twist.py -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/python3.8/site-packages/f1tenth_gazebo
+byte-compiling /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/python3.8/site-packages/f1tenth_gazebo/reset_car.py to reset_car.cpython-38.pyc
+byte-compiling /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/python3.8/site-packages/f1tenth_gazebo/__init__.py to __init__.cpython-38.pyc
+byte-compiling /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/python3.8/site-packages/f1tenth_gazebo/generate_track.py to generate_track.cpython-38.pyc
+byte-compiling /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/python3.8/site-packages/f1tenth_gazebo/ackermann_drive_to_twist.py to ackermann_drive_to_twist.cpython-38.pyc
+running install_data
+creating /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/share/ament_index
+creating /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/share/ament_index/resource_index
+creating /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/share/ament_index/resource_index/packages
+copying resource/f1tenth_gazebo -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/share/ament_index/resource_index/packages
+copying package.xml -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/share/f1tenth_gazebo
+creating /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/share/f1tenth_gazebo/launch
+copying launch/sim_launch.py -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/share/f1tenth_gazebo/launch
+creating /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/share/f1tenth_gazebo/urdf
+copying urdf/f1tenth.urdf.xacro -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/share/f1tenth_gazebo/urdf
+creating /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/share/f1tenth_gazebo/worlds
+copying worlds/button_track.world -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/share/f1tenth_gazebo/worlds
+running install_egg_info
+Copying build/f1tenth_gazebo/f1tenth_gazebo.egg-info to /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/python3.8/site-packages/f1tenth_gazebo-0.0.0-py3.8.egg-info
+running install_scripts
+Installing convert_drive script to /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/f1tenth_gazebo
+Installing reset_car script to /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/f1tenth_gazebo
+writing list of installed files to '/home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/install.log'

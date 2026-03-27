@@ -1,0 +1,52 @@
+[1.262s] Invoking command in '/home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim': PYTHONPATH=/home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/python3.8/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/f1tenth_gazebo build --build-base /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/build install --record /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/install.log --install-scripts $base/lib/f1tenth_gazebo --single-version-externally-managed install_data
+[1.555s] /home/kuy02/.local/lib/python3.8/site-packages/setuptools/dist.py:723: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead
+[1.556s]   warnings.warn(
+[1.610s] running egg_info
+[1.610s] creating build/f1tenth_gazebo/f1tenth_gazebo.egg-info
+[1.611s] writing build/f1tenth_gazebo/f1tenth_gazebo.egg-info/PKG-INFO
+[1.611s] writing dependency_links to build/f1tenth_gazebo/f1tenth_gazebo.egg-info/dependency_links.txt
+[1.611s] writing entry points to build/f1tenth_gazebo/f1tenth_gazebo.egg-info/entry_points.txt
+[1.611s] writing requirements to build/f1tenth_gazebo/f1tenth_gazebo.egg-info/requires.txt
+[1.611s] writing top-level names to build/f1tenth_gazebo/f1tenth_gazebo.egg-info/top_level.txt
+[1.628s] writing manifest file 'build/f1tenth_gazebo/f1tenth_gazebo.egg-info/SOURCES.txt'
+[1.632s] reading manifest file 'build/f1tenth_gazebo/f1tenth_gazebo.egg-info/SOURCES.txt'
+[1.634s] writing manifest file 'build/f1tenth_gazebo/f1tenth_gazebo.egg-info/SOURCES.txt'
+[1.647s] running build
+[1.647s] running build_py
+[1.647s] creating /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/build
+[1.647s] creating /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/build/lib
+[1.647s] creating /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/build/lib/f1tenth_gazebo
+[1.648s] copying f1tenth_gazebo/reset_car.py -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/build/lib/f1tenth_gazebo
+[1.648s] copying f1tenth_gazebo/__init__.py -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/build/lib/f1tenth_gazebo
+[1.648s] copying f1tenth_gazebo/generate_track.py -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/build/lib/f1tenth_gazebo
+[1.648s] copying f1tenth_gazebo/ackermann_drive_to_twist.py -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/build/lib/f1tenth_gazebo
+[1.648s] running install
+[1.649s] running install_lib
+[1.650s] creating /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/python3.8/site-packages/f1tenth_gazebo
+[1.650s] copying /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/build/lib/f1tenth_gazebo/reset_car.py -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/python3.8/site-packages/f1tenth_gazebo
+[1.650s] copying /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/build/lib/f1tenth_gazebo/__init__.py -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/python3.8/site-packages/f1tenth_gazebo
+[1.650s] copying /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/build/lib/f1tenth_gazebo/generate_track.py -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/python3.8/site-packages/f1tenth_gazebo
+[1.650s] copying /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/build/lib/f1tenth_gazebo/ackermann_drive_to_twist.py -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/python3.8/site-packages/f1tenth_gazebo
+[1.650s] byte-compiling /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/python3.8/site-packages/f1tenth_gazebo/reset_car.py to reset_car.cpython-38.pyc
+[1.652s] byte-compiling /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/python3.8/site-packages/f1tenth_gazebo/__init__.py to __init__.cpython-38.pyc
+[1.652s] byte-compiling /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/python3.8/site-packages/f1tenth_gazebo/generate_track.py to generate_track.cpython-38.pyc
+[1.653s] byte-compiling /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/python3.8/site-packages/f1tenth_gazebo/ackermann_drive_to_twist.py to ackermann_drive_to_twist.cpython-38.pyc
+[1.653s] running install_data
+[1.653s] creating /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/share/ament_index
+[1.654s] creating /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/share/ament_index/resource_index
+[1.654s] creating /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/share/ament_index/resource_index/packages
+[1.654s] copying resource/f1tenth_gazebo -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/share/ament_index/resource_index/packages
+[1.654s] copying package.xml -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/share/f1tenth_gazebo
+[1.659s] creating /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/share/f1tenth_gazebo/launch
+[1.659s] copying launch/sim_launch.py -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/share/f1tenth_gazebo/launch
+[1.659s] creating /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/share/f1tenth_gazebo/urdf
+[1.659s] copying urdf/f1tenth.urdf.xacro -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/share/f1tenth_gazebo/urdf
+[1.660s] creating /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/share/f1tenth_gazebo/worlds
+[1.660s] copying worlds/button_track.world -> /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/share/f1tenth_gazebo/worlds
+[1.660s] running install_egg_info
+[1.661s] Copying build/f1tenth_gazebo/f1tenth_gazebo.egg-info to /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/python3.8/site-packages/f1tenth_gazebo-0.0.0-py3.8.egg-info
+[1.662s] running install_scripts
+[1.696s] Installing convert_drive script to /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/f1tenth_gazebo
+[1.696s] Installing reset_car script to /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/f1tenth_gazebo
+[1.696s] writing list of installed files to '/home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/install.log'
+[1.734s] Invoked command in '/home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim' returned '0': PYTHONPATH=/home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/install/f1tenth_gazebo/lib/python3.8/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/f1tenth_gazebo build --build-base /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/build install --record /home/kuy02/gazebo_ws/src/f1tenth_gazebo_sim/build/f1tenth_gazebo/install.log --install-scripts $base/lib/f1tenth_gazebo --single-version-externally-managed install_data

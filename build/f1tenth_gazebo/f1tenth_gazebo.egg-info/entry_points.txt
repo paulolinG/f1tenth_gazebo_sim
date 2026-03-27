@@ -1,0 +1,4 @@
+[console_scripts]
+convert_drive = f1tenth_gazebo.ackermann_drive_to_twist:main
+reset_car = f1tenth_gazebo.reset_car:main
+
