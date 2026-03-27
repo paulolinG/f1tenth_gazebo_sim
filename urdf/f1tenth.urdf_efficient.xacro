@@ -55,7 +55,7 @@
 
   <!-- Steering limits from VESC servo config -->
   <xacro:property name="max_steering_angle" value="0.31" />
-  <xacro:property name="max_steering_velocity" value="3.2" />
+  <xacro:property name="max_steering_velocity" value="1.0" />
 
   <!-- ================================================================== -->
   <!-- Body inertia at 5.0 kg (solid box: 0.25 x 0.2032 x 0.1)           -->
@@ -139,7 +139,7 @@
       <ray>
         <scan>
           <horizontal>
-            <samples>1080</samples>         <!-- was 1080, huge performance gain -->
+            <samples>360</samples>         <!-- was 1080, huge performance gain -->
             <resolution>1</resolution>
             <min_angle>-2.35</min_angle>
             <max_angle>2.35</max_angle>
@@ -210,8 +210,8 @@
     <material>Gazebo/Black</material>
     <mu1>1.0</mu1>
     <mu2>1.5</mu2>
-    <kp>50000.0</kp>
-    <kd>50.0</kd>
+    <kp>5000.0</kp>   <!-- was 50000 — too stiff causes bouncing -->
+    <kd>100.0</kd>    <!-- was 50 — more damping absorbs impacts -->
     <minDepth>0.001</minDepth>
   </gazebo>
 
@@ -256,8 +256,8 @@
     <material>Gazebo/Black</material>
     <mu1>1.0</mu1>
     <mu2>1.5</mu2>
-    <kp>50000.0</kp>
-    <kd>50.0</kd>
+    <kp>5000.0</kp>   <!-- was 50000 — too stiff causes bouncing -->
+    <kd>100.0</kd>    <!-- was 50 — more damping absorbs impacts -->
     <minDepth>0.001</minDepth>
   </gazebo>
 
@@ -320,8 +320,8 @@
     <material>Gazebo/Black</material>
     <mu1>1.0</mu1>
     <mu2>1.5</mu2>
-    <kp>50000.0</kp>
-    <kd>50.0</kd>
+    <kp>5000.0</kp>   <!-- was 50000 — too stiff causes bouncing -->
+    <kd>100.0</kd>    <!-- was 50 — more damping absorbs impacts -->
     <minDepth>0.001</minDepth>
   </gazebo>
 
@@ -383,8 +383,8 @@
     <material>Gazebo/Black</material>
     <mu1>1.0</mu1>
     <mu2>1.5</mu2>
-    <kp>50000.0</kp>
-    <kd>50.0</kd>
+    <kp>5000.0</kp>   <!-- was 50000 — too stiff causes bouncing -->
+    <kd>100.0</kd>    <!-- was 50 — more damping absorbs impacts -->
     <minDepth>0.001</minDepth>
   </gazebo>
 
@@ -402,12 +402,12 @@
   <gazebo reference="camera_link">
     <sensor type="depth" name="camera">
       <always_on>true</always_on>
-      <update_rate>30.0</update_rate>
+      <update_rate>10.0</update_rate>
       <camera name="camera">
         <horizontal_fov>1.518</horizontal_fov>
         <image>
-          <width>640</width>
-          <height>480</height>
+          <width>160</width>
+          <height>120</height>
           <format>R8G8B8</format>
         </image>
         <clip>
@@ -468,8 +468,8 @@
 
       <!-- PID gains tuned for 5 kg mass -->
       <linear_velocity_pid_gain>4.0 0.4 0.04</linear_velocity_pid_gain>
-      <left_steering_pid_gain>15.0 1.5 0.2</left_steering_pid_gain>
-      <right_steering_pid_gain>15.0 1.5 0.2</right_steering_pid_gain>
+      <left_steering_pid_gain>2.0 0.1 0.5</left_steering_pid_gain>
+      <right_steering_pid_gain>2.0 0.1 0.5</right_steering_pid_gain>
 
       <publish_odom>true</publish_odom>
       <publish_odom_tf>true</publish_odom_tf>
