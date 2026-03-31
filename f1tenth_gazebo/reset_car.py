@@ -48,8 +48,8 @@ class ResetCar(Node):
 
         self.declare_parameter('entity_name', 'f1tenth_car')
         self.declare_parameter('x', 0.0)
-        self.declare_parameter('y', -1.1)
-        self.declare_parameter('z', 0.1)
+        self.declare_parameter('y', -3.0)
+        self.declare_parameter('z', 0.05)
         self.declare_parameter('yaw', 0.0)
 
         self.create_subscription(Empty, '/reset_car', self._reset_cb, 10)

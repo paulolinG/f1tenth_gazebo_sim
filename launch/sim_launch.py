@@ -17,12 +17,19 @@ def generate_launch_description() -> LaunchDescription:
     z_pose = LaunchConfiguration('z_pose', default='0.1')
 
     # Declare Launch Arguments
+    # declare_x_pose_cmd = DeclareLaunchArgument(
+    #     'x_pose', default_value='0.0', description='Specify x-coordinate of the car')
+    # declare_y_pose_cmd = DeclareLaunchArgument(
+    #     'y_pose', default_value='-1.1', description='Specify y-coordinate of the car')
+    # declare_z_pose_cmd = DeclareLaunchArgument(
+    #     'z_pose', default_value='0.1', description='Specify z-coordinate of the car')
+
     declare_x_pose_cmd = DeclareLaunchArgument(
         'x_pose', default_value='0.0', description='Specify x-coordinate of the car')
     declare_y_pose_cmd = DeclareLaunchArgument(
-        'y_pose', default_value='-1.1', description='Specify y-coordinate of the car')
+        'y_pose', default_value='-3.0', description='Specify y-coordinate of the car')
     declare_z_pose_cmd = DeclareLaunchArgument(
-        'z_pose', default_value='0.1', description='Specify z-coordinate of the car')
+        'z_pose', default_value='0.05', description='Specify z-coordinate of the car')
 
     # Process the xacro file for the f1tenth car
     xacro_file = os.path.join(get_package_share_directory(pkg_name), 'urdf', xacro_filename)
@@ -34,11 +41,11 @@ def generate_launch_description() -> LaunchDescription:
         package='robot_state_publisher',
         executable='robot_state_publisher',
         output='screen',
-        parameters=[robot_description]
+        parameters=[robot_description, {'use_sim_time': True}]
     )
 
     # Include the Gazebo launch file
-    world_file = os.path.join(get_package_share_directory(pkg_name), 'worlds', 'button_track.world')
+    world_file = os.path.join(get_package_share_directory(pkg_name), 'worlds', 'rect_track.world')
 
     gazebo_pkg = get_package_share_directory('gazebo_ros')
     gazebo = IncludeLaunchDescription(
@@ -46,16 +53,19 @@ def generate_launch_description() -> LaunchDescription:
         launch_arguments={'world': world_file}.items()
     )
 
-    reset_car_node = Node(
-        package='f1tenth_gazebo',
-        executable='reset_car',
-        output='screen'
-    )
-
     ackermann_to_drive_node = Node(
         package='f1tenth_gazebo',
         executable = 'convert_drive',
         output='screen',
+    )
+
+    ekf_config_file = os.path.join(get_package_share_directory(pkg_name), 'config', 'ekf.yaml')
+    ekf_node = Node(
+        package='robot_localization',
+        executable='ekf_node',
+        name='ekf_filter_node',
+        output='screen',
+        parameters=[ekf_config_file]
     )
 
     # Spawn the f1tenth car using the parameterized coordinates
@@ -80,5 +90,6 @@ def generate_launch_description() -> LaunchDescription:
         ackermann_to_drive_node,
         node_robot_state_publisher,
         gazebo,
-        spawn_entity
+        spawn_entity,
+        ekf_node
     ])

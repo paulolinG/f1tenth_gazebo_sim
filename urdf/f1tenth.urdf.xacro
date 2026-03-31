@@ -25,7 +25,7 @@
   <!-- ================================================================== -->
   <!-- Geometric properties                                                -->
   <!-- ================================================================== -->
-  <xacro:property name="wheelbase" value="0.25" />
+  <xacro:property name="wheelbase" value="0.2" />
   <xacro:property name="width" value="0.2032" />
   <xacro:property name="height" value="0.1" />
   <xacro:property name="ground_offset" value="0.02" />
@@ -54,7 +54,7 @@
   <xacro:property name="hinge_mass" value="0.1" />
 
   <!-- Steering limits from VESC servo config -->
-  <xacro:property name="max_steering_angle" value="0.31" />
+  <xacro:property name="max_steering_angle" value="0.7" />
   <xacro:property name="max_steering_velocity" value="3.2" />
 
   <!-- ================================================================== -->
@@ -122,6 +122,30 @@
     <origin xyz="${laser_distance_from_base_link} 0 ${ground_offset+height+(laser_height/2)}"/>
   </joint>
 
+  <gazebo reference="${car_name}/base_link">
+    <sensor name="imu" type="imu">
+        <always_on>true</always_on>
+        <update_rate>200</update_rate>
+        <imu>
+            <angular_velocity>
+                <x><noise type="gaussian"><mean>0</mean><stddev>0.001</stddev></noise></x>
+                <y><noise type="gaussian"><mean>0</mean><stddev>0.001</stddev></noise></y>
+                <z><noise type="gaussian"><mean>0</mean><stddev>0.001</stddev></noise></z>
+            </angular_velocity>
+            <linear_acceleration>
+                <x><noise type="gaussian"><mean>0</mean><stddev>0.01</stddev></noise></x>
+                <y><noise type="gaussian"><mean>0</mean><stddev>0.01</stddev></noise></y>
+                <z><noise type="gaussian"><mean>0</mean><stddev>0.01</stddev></noise></z>
+            </linear_acceleration>
+        </imu>
+        <plugin name="imu_plugin" filename="libgazebo_ros_imu_sensor.so">
+            <ros><remapping>~/out:=/imu</remapping></ros>
+            <frame_name>${car_name}/base_link</frame_name>
+        </plugin>
+    </sensor>
+  </gazebo>
+
+
   <link name="${car_name}/laser_model">
     <visual>
       <geometry>
@@ -129,7 +153,55 @@
       </geometry>
       <material name="black"/>
     </visual>
+
+    <!-- <collision>
+      <geometry>
+        <cylinder radius="${laser_radius}" length="${laser_height}"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.13"/>
+      <inertia ixx="0.0001" ixy="0.0" ixz="0.0"
+               iyy="0.0001" iyz="0.0"
+               izz="0.0001"/>
+    </inertial> -->
   </link>
+
+  <gazebo reference="${car_name}/laser_model">
+    <sensor name="lidar" type="ray">
+      <always_on>true</always_on>
+      <visualize>false</visualize>
+      <update_rate>20</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>1080</samples>   
+            <resolution>1</resolution>
+            <min_angle>-2.35</min_angle>
+            <max_angle>2.35</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.1</min>
+          <max>30.0</max>  
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="scan" filename="libgazebo_ros_ray_sensor.so">
+        <ros>
+          <remapping>~/out:=/scan</remapping>
+        </ros>
+        <output_type>sensor_msgs/LaserScan</output_type>
+        <frame_name>${car_name}/laser_model</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
 
   <!-- ================================================================== -->
   <!-- Back left wheel                                                     -->
@@ -173,8 +245,8 @@
   <!-- Higher mu prevents drifting; softer kp/kd gives realistic contact -->
   <gazebo reference="${car_name}/back_left_wheel">
     <material>Gazebo/Black</material>
-    <mu1>1.0</mu1>
-    <mu2>1.5</mu2>
+    <mu1>2.0</mu1>
+    <mu2>2.0</mu2>
     <kp>50000.0</kp>
     <kd>50.0</kd>
     <minDepth>0.001</minDepth>
@@ -219,8 +291,8 @@
 
   <gazebo reference="${car_name}/back_right_wheel">
     <material>Gazebo/Black</material>
-    <mu1>1.0</mu1>
-    <mu2>1.5</mu2>
+    <mu1>2.0</mu1>
+    <mu2>2.0</mu2>
     <kp>50000.0</kp>
     <kd>50.0</kd>
     <minDepth>0.001</minDepth>
@@ -283,8 +355,8 @@
 
   <gazebo reference="${car_name}/front_left_wheel">
     <material>Gazebo/Black</material>
-    <mu1>1.0</mu1>
-    <mu2>1.5</mu2>
+    <mu1>2.0</mu1>
+    <mu2>2.0</mu2>
     <kp>50000.0</kp>
     <kd>50.0</kd>
     <minDepth>0.001</minDepth>
@@ -346,8 +418,8 @@
 
   <gazebo reference="${car_name}/front_right_wheel">
     <material>Gazebo/Black</material>
-    <mu1>1.0</mu1>
-    <mu2>1.5</mu2>
+    <mu1>2.0</mu1>
+    <mu2>2.0</mu2>
     <kp>50000.0</kp>
     <kd>50.0</kd>
     <minDepth>0.001</minDepth>
@@ -407,7 +479,7 @@
         <remapping>cmd_vel:=cmd_vel</remapping>
         <remapping>odom:=odom</remapping>
       </ros>
-      <update_rate>50.0</update_rate>
+      <update_rate>100.0</update_rate>
 
       <left_steering_joint>base_to_front_left_hinge</left_steering_joint>
       <right_steering_joint>base_to_front_right_hinge</right_steering_joint>
@@ -437,8 +509,8 @@
       <right_steering_pid_gain>15.0 1.5 0.2</right_steering_pid_gain>
 
       <publish_odom>true</publish_odom>
-      <publish_odom_tf>true</publish_odom_tf>
-      <publish_wheel_tf>true</publish_wheel_tf>
+      <publish_odom_tf>false</publish_odom_tf>
+      <publish_wheel_tf>false</publish_wheel_tf>
       <odometry_frame>odom</odometry_frame>
       <robot_base_frame>${car_name}/base_link</robot_base_frame>
     </plugin>

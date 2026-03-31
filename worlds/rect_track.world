@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="rect_track">
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://ground_plane</uri></include>
+
+    <model name='out_top'>
+      <static>1</static>
+      <pose>0 4.0 0.5 0 0 0</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry><box><size>12.0 0.1 1.0</size></box></geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry><box><size>12.0 0.1 1.0</size></box></geometry>
+          <material><script><name>Gazebo/Grey</name></script></material>
+        </visual>
+      </link>
+    </model>
+    <model name='out_bot'>
+      <static>1</static>
+      <pose>0 -4.0 0.5 0 0 0</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry><box><size>12.0 0.1 1.0</size></box></geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry><box><size>12.0 0.1 1.0</size></box></geometry>
+          <material><script><name>Gazebo/Grey</name></script></material>
+        </visual>
+      </link>
+    </model>
+    <model name='out_left'>
+      <static>1</static>
+      <pose>-6.0 0 0.5 0 0 0</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry><box><size>0.1 8.0 1.0</size></box></geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry><box><size>0.1 8.0 1.0</size></box></geometry>
+          <material><script><name>Gazebo/Grey</name></script></material>
+        </visual>
+      </link>
+    </model>
+    <model name='out_right'>
+      <static>1</static>
+      <pose>6.0 0 0.5 0 0 0</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry><box><size>0.1 8.0 1.0</size></box></geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry><box><size>0.1 8.0 1.0</size></box></geometry>
+          <material><script><name>Gazebo/Grey</name></script></material>
+        </visual>
+      </link>
+    </model>
+    <model name='infield_block'>
+      <static>1</static>
+      <pose>0 0 0.5 0 0 0</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry><box><size>8.0 4.0 1.0</size></box></geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry><box><size>8.0 4.0 1.0</size></box></geometry>
+          <material><script><name>Gazebo/DarkGrey</name></script></material>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>
